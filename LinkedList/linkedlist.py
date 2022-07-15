@@ -6,6 +6,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.tail = None
         
     def is_empty(self):
         if self.head is None:
@@ -15,24 +16,30 @@ class LinkedList:
         
     def insert_first(self, element):
         n = Node(element, self.head)
-        self.head = n
+        if self.head is None:
+            self.head = self.tail = None
+        else:
+            n.next_node = self.head
+            self.head = n
 
     def delete_first(self):
         n = self.head
-        self.head = n.next_node
-        n.next_node = None
+        if self.head == self.tail:
+            self.head = self.tail = None
+            
+        else:
+            self.head = n.next_node
+            n.next_node = None
         return n.element
         
     def insert_last(self, element):
         # insert code here
         n = Node(element)
         if self.head is None:
-            self.head = n
-            return
-        m=self.head
-        while m.next_node is not None:
-            m = m.next_node
-        m.next_node = n
+            self.head = self.tail = n
+        else:
+            self.tail.next_node = n
+            self.tail = n
         
     def print_list(self):
         n = self.head

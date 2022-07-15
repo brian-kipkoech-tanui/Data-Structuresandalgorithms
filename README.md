@@ -13,3 +13,11 @@ Stack
 - A Stack is an Abstract Data Structure(ADT) such that an instance S supports the following two methods:
 1) S.push(e) - Add element e to the top of stack S
 2) S.pop() - Remove and return the top element from the stack S, an error occurs if the stack is empty.
+
+Queue:
+- A Queue is a linera structure that follows a specific order in which the operations are performed.
+- The order is first in first out(FIFO).
+- The main difference between stacks and queues is that stacks follow LIFO while queues follow FIFO structure.
+methods:
+1) enqueue: To place a thing into a queue, that is adding an element to the tail of the queue.
+2) dequeue: To take a thing out of a queue; thats is to remove first avalilable item from the head of a queue.
