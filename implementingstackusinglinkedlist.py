@@ -1,46 +1,29 @@
 from linkedlist import *
 
 class Stack:
-    # insert code here
+    # Initialise an attribute that uses the LinkedList class
     def __init__(self):
         self.stack = LinkedList()
         
     def is_empty(self):
+        # Returns True if the stack is empty and False otherwise
         return self.stack.is_empty()
         
     def push(self,element):
+        # Add an element at the beginning of the stack.
         self.stack.insert_first(element)
         
     def pop(self):
+        # Remove an element and return that removed element
+        # Note: Removes the first element in the stack
         return self.stack.delete_first()
         
     def print_stack(self):
         self.stack.print_list()
 
 
-class StackList:
-    def __init__(self):
-        self.stack = []
-        
-    def is_empty(self):
-        # insert code here
-        if len(self.stack) == 0:
-            return True
-
-    def push(self, element):
-        # insert code here
-        self.stack.append(element)
-        
-    def pop(self):
-        # insert code here
-        return self.stack.pop()
-        
-    def print_stack(self):
-        print(self.stack)
-    
-
 def use_stack():
-    s = StackList()
+    s = Stack()
     s.push(1)
     s.push(2)
     s.push(3)
